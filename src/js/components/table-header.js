@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import {Row, Col} from 'react-bootstrap';
+import {isNull} from '../utils/common';
 
 const _ = require('lodash');
 
-function isNull(v) {
-    return v === null || typeof v === 'undefined' || v === undefined || v === 'undefined';
-}
 
 export default class TableHeader extends Component {
 

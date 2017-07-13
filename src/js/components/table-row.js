@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import {Row, Col} from 'react-bootstrap';
 import Rx from 'rxjs/Rx';
+import {isNull} from '../utils/common';
 
 const _ = require('lodash');
 
-function isNull(v) {
-    return v === null || typeof v === 'undefined' || v === undefined || v === 'undefined';
-}
 
 export default class TableRow extends Component {
 
