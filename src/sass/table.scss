@@ -1,0 +1,225 @@
+$off-white: #ececec;
+$light-grey: #c7c7c7;
+$white: #ffffff;
+$action-orange: #f5a623;
+$font-color: #5e6977;
+$input-radius: 4px;
+$table-success: #bcce6d;
+$table-success-changed: #9fba35;
+$table-failure: #d96752;
+$table-failure-changed: #cd3923;
+$table-background: rgba(63, 66, 74, 0.35);
+
+
+.admin-table {
+  position: relative;
+
+  & > .form-group {
+    width: 100%;
+    display: inline-block;
+    margin: 5px 5px 10px 0;
+  }
+
+  .header-row {
+    cursor: pointer;
+    display: flex;
+    display: -webkit-flex;
+    border-top-right-radius: $input-radius;
+    border-top-left-radius: $input-radius;
+    position: relative;
+    z-index: 8;
+
+    [class*="col-"] {
+      padding: 8px 0 15px 10px;
+      flex: 1;
+      min-width: 135px;
+      background-color: $table-background;
+      border: 1px solid $light-grey;
+      border-right: none;
+      position: relative;
+      background-color: #eee;
+      color: #24262d;
+
+      a {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid $light-grey;
+        border-bottom: none;
+        position: absolute;
+        right: 5px;
+        top: 16px;
+      }
+
+      &.fixed-width{
+        flex: 0;
+        min-width: 120px;
+      }
+    }
+
+    [class*="col-"].sort-asc {
+      a {
+        border-top-color: #7d7d7d;
+      }
+    }
+    [class*="col-"].sort-desc {
+      a {
+        display: block;
+        border-top: none;
+        border-bottom: 5px solid #7d7d7d;
+      }
+    }
+    [class*="sort-"] {
+      background-color: #ccc;
+      border: 1px solid #bbb;
+    }
+    [class*="sort-"] + div[class*="header-"] {
+      border-left: none;
+    }
+  }
+
+  .table-container {
+    width: 100%;
+  }
+  
+  .row {
+    margin: 0;
+    border-bottom: none;
+  }
+
+  .values-row {
+    border-bottom: none;
+    cursor: pointer;
+    display: flex;
+    display: -webkit-flex;
+    transition: min-height 0.2s;
+    position: relative;
+    margin-top: -1px;
+    min-height: 29px;
+
+    [class*="col-"] {
+      padding: 4px 10px;
+      flex: 1;
+      transition: min-height 0.3s;
+      min-width: 135px;
+      border: 1px solid $light-grey;
+      border-bottom: none;
+      border-right: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background: $table-background;
+
+      a {
+        color: $font-color;
+        cursor: pointer;
+      }
+
+      .form-group {
+        margin-bottom: 0;
+      }
+
+      &.last-child {
+        border-right: 1px solid $light-grey;
+      }
+
+    }
+
+    &.expanded { 
+      [class*="col-"] {
+        border-left: none;
+      }
+      [class*="col-"]:first-of-type {
+        border-left:  1px solid $light-grey;
+      }
+    }
+
+  }
+
+  .expansion {
+    max-height: 0px;
+    overflow: hidden;
+    transition: min-height 0.3s;
+
+    &.show {
+      max-height: 350px;
+      overflow: auto;
+      background: rgba(63, 66, 74, 0.35);
+      border: 1px solid #c7c7c7;
+      border-top: none;
+      padding: 10px;
+
+      .expansion-header {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        border-bottom: 1px solid #f2be35;
+      }
+
+      .runway-header {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        border-bottom: 1px solid #686b73;
+        display: flex;
+        width: 100%;
+      }
+
+      .runway-values {
+        font-size: 12px;
+        display: inline-block;
+        color: #949ba2;
+        border-bottom: 1px solid #686b73;
+        display: flex;
+        width: 100%;
+      }
+
+      .runway-header span, 
+      .runway-values span {
+        flex: 1;
+      }
+
+
+    }
+    
+  }
+
+  .pagination {
+    padding: 5px;
+    border: 1px solid $light-grey;
+    border-top: none;
+    border-bottom-left-radius: $input-radius;
+    border-bottom-right-radius: $input-radius;
+    background-color: #eee;
+    color: #2f323b;
+
+    span {
+      width: 10%;
+      margin: 0;
+      cursor: pointer;
+
+      &.invisible {
+        visibility: hidden;
+      }
+    }
+
+    span.current-position {
+      text-align: center;
+      width: calc(100% - 40%);
+    }
+
+    span.current-position ~ span {
+      text-align: right;
+    }
+  }
+
+  .header-row [class*="col-"]:first-child {
+    border-top-left-radius: $input-radius;
+  }
+  
+  .header-row [class*="col-"]:last-child {
+    border-top-right-radius: $input-radius;
+    border-right: 1px solid $light-grey;
+  }
+
+}

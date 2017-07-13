@@ -1,0 +1,20 @@
+.query-content {
+    padding: 20px 0;
+
+    .country-container {
+        span {
+            position: relative;
+            min-width: 70px;
+            margin-right: 50px;
+            display: inline-block;
+
+            sup {
+                display: inline-block;
+                font-size: 10px;
+                position: absolute;
+                top: -12px;
+                color: #bfbfbf;
+            }
+        }
+    }
+}
