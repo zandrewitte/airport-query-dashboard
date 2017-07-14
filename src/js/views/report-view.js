@@ -45,7 +45,7 @@ export default class ReportViewComponent extends Component {
                                 valueField="airportCount"
                                 labelRadius={5}
                                 outlineColor='transparent'
-                                color="#f2be35"
+                                color="#FFF"
                                 labelTickColor="#FFF"
                                 radius={'42%'}
                                 innerRadius={'60%'}
@@ -65,7 +65,7 @@ export default class ReportViewComponent extends Component {
                                 valueField="airportCount"
                                 labelRadius={5}
                                 outlineColor='transparent'
-                                color="#f2be35"
+                                color="#FFF"
                                 labelTickColor="#FFF"
                                 radius={'42%'}
                                 innerRadius={'60%'}
@@ -82,7 +82,7 @@ export default class ReportViewComponent extends Component {
                             .map(runwayIdent => 
                                 <div className="country-container"> 
                                     <div className="country-header">
-                                        <div>Ident: {runwayIdent.runwayIdentification}</div>
+                                        <div>Identification: {runwayIdent.runwayIdentification}</div>
                                         <div>Count: {runwayIdent.count}</div>
                                     </div>
                                 </div>
